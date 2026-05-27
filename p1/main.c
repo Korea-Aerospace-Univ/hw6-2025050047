@@ -2,21 +2,18 @@
 
 int main(void) {
     char arr[10] = {};
-    char *p = arr;
 
     for (int i = 0; i < 10; i++) {
-        scanf("%c", p + i);
+        scanf("%c", arr[i]);
     }
 
-    char *p2 = arr;
-
     int maxCount = 0;
-    char maxChar = ' ';
+    char maxChar = '\0';
 
-    for (char *temp = p; temp < p + 10; temp++) {
+    for (char *temp = arr; temp < arr + 10; temp++) {
         int count = 0;
         
-        for (char *temp2 = p2; temp2 < p2 + 10; temp2++) {
+        for (char *temp2 = arr; temp2 < arr + 10; temp2++) {
             if (*temp == *temp2) {
                 count++;
             }
