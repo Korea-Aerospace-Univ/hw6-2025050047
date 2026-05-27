@@ -3,19 +3,17 @@
 int main(void) {
     int arr1[20] = {};
     int arr2[20] = {};
-    int *p = arr1;
-    int *p2 = arr2;
 
     int n = 0;
     scanf("%d", &n);
-    for (int *i = p; i < n + p; i++) {
-        scanf("%d", i);
+    for (int *p = arr1; p < n + arr1; p++) {
+        scanf("%d", p);
     }
-    for (int *i = (n + p2 - 1); i >= p2; i--) {
-        scanf("%d", i);
+    for (int *p = (n + arr2 - 1); p >= arr2; p--) {
+        scanf("%d", p);
     }
 
     for (int i = 0; i < n; i++) {
-        printf(" %d", *(p + i) + *(p2 + i));
+        printf(" %d", arr1[i] + arr2[i]);
     }
 }
