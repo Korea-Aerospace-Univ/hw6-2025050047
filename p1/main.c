@@ -14,15 +14,15 @@ int main(void) {
     char maxChar = ' ';
 
     for (int i = 0; i < 10; i++) {
+        int count = 1;
         for (int j = 0; j < 10; j++) {
-            int count = 1;
             if (i != j && *(p + i) == *(p + j)) {
                 count++;
             }
-            if (maxCount < count) {
-                maxChar = *(p + i);
-                maxCount = count;
-            }
+        }
+        if (maxCount < count) {
+            maxChar = *(p + i);
+            maxCount = count;
         }
     }
     printf("%c %d", maxChar, maxCount);
