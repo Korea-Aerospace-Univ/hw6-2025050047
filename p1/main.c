@@ -13,15 +13,16 @@ int main(void) {
     int maxCount = 0;
     char maxChar = ' ';
 
-    for (int i = 0; i < 10; i++) {
-        int count = 1;
-        for (int j = 0; j < 10; j++) {
-            if (i != j && *(p + i) == *(p + j)) {
+    for (char *temp = p; temp < p + 10; temp++) {
+        int count = 0;
+        
+        for (char *temp2 = p2; temp2 < p2 + 10; temp2++) {
+            if (*temp == *temp2) {
                 count++;
             }
         }
         if (maxCount < count) {
-            maxChar = *(p + i);
+            maxChar = *temp;
             maxCount = count;
         }
     }
